@@ -1,0 +1,47 @@
+1)FTP parolu
+Təqdim edilmiş ftp_S03.pcapng faylənda trafik üzərindən FTP-yə daxil olunmuşdur.
+Sual: FTP-yə daxil olunan vaxtə istifadə edilən parol nədir?
+
+Yuxarida axtaris yerine ftp yaz axtar, info hissesinde PASS olacaq onun qabagindaki paroldu
+
+
+2)HTTP trafikin analizi
+HTTP-nin nə qədər təhlükəli olmasənə hər zaman deyirlər.
+Sizə təqdim edilmiş "http-S03.pcapng" faylənda mail.az saytəna daxil olan  vaxtə istifadə edilən parolu tapın.
+
+Axtaris yerine http.request.method == "POST" yaz, xanani secdikde asagi hissede HTML Form URL Encoded hissesinde "secretkey" axtardigimiz paroldu
+
+
+3)HTTP daxili gizli kod
+Dünyada yaradəlan ilk sayt http://info.cern.ch/hypertext/WWW/TheProject.html ünvanənda yerləşdirilib.
+Sizə təqdim edilmiş "HTTP gizli melumat - S03.pcapng" trafik faylənə analiz edərək, dünyada yaradəlməş ilk sayta daxil olunan vaxtə istifadə edilən flag-i tapın.
+
+Axtarisa http.request.full_uri contains "info.cern.ch" yaziriq cixan xanaya sag click>follow>HTTP Stream, acilan sehifede en basda User-Agent hissesinde flag cavabdi
+
+
+4)Mailin analiz edilməsi
+Sizə təqdim edilmiş "sual_S03.pcapng" faylından göndərilən və ya qəbul edilən emaili analiz edərək flag-ı tapın.
+
+Axtaris yerine smtp yaz, cixan her hansi bir xanaya sag click>follow>TCP Stream, acilan sehifede base64 kodu var base64 to image decoderle sekili tap flag sekilin ustunde yazilib
+
+
+5)Gizli kod
+Sizə təqdim edilmiş "kod_S03.pcapng" faylənda mail göndərilib, mailin daxilindəki gizli kodu tapın.
+
+Yene smtp, sag click>follow>TCP Stream, base64 kodu var, kodu copy edirik, terminalda:
+
+nano kod.b64 > copy elediyimiz base64u yapisdiririq bura(en ustdeki setrler ve en altdaki setrler silinmelidi sadece kod olacaq)> ctrl O > ctrl x
+base64 -d kod.b64 > kod-03.zip
+unzip kod-03.zip
+cd kod-03
+cat kod-03
+Cavab burda yazilandi, oxunaqli deyilse kod-03 faylindaki diger fayllari catle yoxlayin
+
+
+06) Portscan-ın tapılması
+USB-də Wireshark ilə analiz edilmiş "PCAP S03.pcapng" şəbəkə faylı var.
+Faylı analiz edərək 4876cı portu scan edən istifadəçinin IP-sini tapın.
+
+Axtaris yerine tcp.port == 4876 yaz, sutunlarda Source Ip nedirse cavab odu
+
+
