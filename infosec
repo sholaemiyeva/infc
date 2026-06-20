@@ -87,5 +87,58 @@ cat final-flag.txt
 
 Flag is: 0940dd355a45055de5ff386b823b02b0
 
+Part 2
+
+
+FTP parolu
+Təqdim edilmiş ftp_S03.pcapng faylənda trafik üzərindən FTP-yə daxil olunmuşdur.
+Sual: FTP-yə daxil olunan vaxtə istifadə edilən parol nədir?
+ 0dc69e7083c59b4af535bc71d32e2b0aa93b273e\r\n
+
+ axtaris yerine http.request.method == "POST"
+HTTP trafikin analizi
+HTTP-nin nə qədər təhlükəli olmasənə hər zaman deyirlər.
+Sizə təqdim edilmiş "http-S03.pcapng" faylənda mail.az saytəna daxil olan  vaxtə istifadə edilən parolu tapın.
+POST olana click et iki defe secretkey
+Form item: "secretkey" = a0cb1e49d11254f3a059aa2ddd22d1a51d852bb5
+
+HTTP daxili gizli kod
+http.request.full_uri contains "info.cern.ch"
+Mozilla/5.0 (FLAG{a78c39d9217d2fb2fc103c3be30dc1b37db5e577})
+flagi yazirsan
+Dünyada yaradəlan ilk sayt http://info.cern.ch/hypertext/WWW/TheProject.html ünvanənda yerləşdirilib.
+Sizə təqdim edilmiş "HTTP gizli melumat - S03.pcapng" trafik faylənə analiz edərək, dünyada yaradəlməş ilk sayta daxil olunan vaxtə istifadə edilən flag-i tapın.
+
+search smtp yaz
+ashaida
+midexam@cert-az.com
+File 
+open object iml
+gir ustune click edib .eml save ele
+ac icinde maildeki  gizli fileni gotur ve png formatda save et
+flag ordadir
+Mailin analiz edilməsi
+Sizə təqdim edilmiş "sual_S03.pcapng" faylından göndərilən və ya qəbul edilən emaili analiz edərək flag-ı tapın.
+
+search smtp yaz
+ashaida
+midexam@cert-az.com
+File 
+open object iml
+gir ustune click edib .eml save ele
+sonra icinde olani zip kimi save et
+ac icindeki filede kod3 icinde var
+3f7a0620d3bc4f04332a877b513cd8b8af6616c9
+Gizli kod
+Sizə təqdim edilmiş "kod_S03.pcapng" faylənda mail göndərilib, mailin daxilindəki gizli kodu tapın.
+
+tcp.port == 4876 source desination ne istese yaz
+06. Portscan-ın tapılması
+USB-də Wireshark ilə analiz edilmiş "PCAP S03.pcapng" şəbəkə faylı var.
+
+Faylı analiz edərək 4876cı portu scan edən istifadəçinin IP-sini tapın.
+
+
+
 
 
